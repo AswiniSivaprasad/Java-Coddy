@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class PicnicBasketPackingArrays {
+
+    public static String[] preparePicnicBasket(int snacksCount, int drinksCount) {
+        String[] snacks = {"sandwich", "apple", "cookie", "salad"};
+        String[] drinks = {"water", "juice", "soda", "tea"};
+
+        String[] picnicItems = new String[snacksCount + drinksCount];
+
+        // Fill the picnic basket with snacks
+        System.arraycopy(snacks, 0, picnicItems, 0, snacksCount);
+
+        // Fill the picnic basket with drinks
+        System.arraycopy(drinks, 0, picnicItems, snacksCount, drinksCount);
+
+        return picnicItems;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of snacks: ");
+        int snacksCount = scanner.nextInt();
+
+        System.out.print("Enter the number of drinks: ");
+        int drinksCount = scanner.nextInt();
+
+        String[] picnicItems = preparePicnicBasket(snacksCount, drinksCount);
+
+        System.out.println("Picnic Items:");
+        for (String item : picnicItems) {
+            System.out.println(item);
+        }
+    }
+}

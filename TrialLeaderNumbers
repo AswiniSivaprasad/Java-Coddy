@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class TrialLeaderNumbers {
+
+    public static int countSpecialWaypoints(int[] waypointNumbers) {
+        int count = 0;
+        // Loop through all elements in the array
+        for (int i = 0; i < waypointNumbers.length; i++) {
+            // Check if the current element is even and divisible by 3
+            if (waypointNumbers[i] % 2 == 0 && waypointNumbers[i] % 3 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter array length");
+        int[] waypointNumbers = new int[sc.nextInt()];
+        System.out.println("Enter array elements");
+        for (int i = 0; i < waypointNumbers.length; i++) {
+            waypointNumbers[i] = sc.nextInt();
+        }
+
+        // Call the function to get the count of special waypoints
+        int specialWaypointsCount = countSpecialWaypoints(waypointNumbers);
+
+        // Print the calculated count
+        System.out.println("Number of special waypoints: " + specialWaypointsCount);
+    }
+}

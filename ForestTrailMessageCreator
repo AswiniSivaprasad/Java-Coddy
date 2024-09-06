@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ForestTrailMessageCreator {
+
+	public static String createTrailMessage(String[] words, int[] indices) {
+		StringBuilder message = new StringBuilder();
+		for(int index : indices) {
+			message.append(words[index]).append(" ");
+		}
+		return message.toString().trim();
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter length of words array");
+		String[] words = new String[sc.nextInt()];
+		System.out.println("Enter the words");
+		for(int i=0;i<words.length;i++) {
+			words[i] = sc.next();
+		}
+		System.out.println("Enter length of indices array");
+		int[] indices = new int[sc.nextInt()];
+		System.out.println("Enter the indices");
+		for(int i=0;i<indices.length;i++) {
+			indices[i] = sc.nextInt();
+		}
+		System.out.println(createTrailMessage(words, indices));
+	}
+}

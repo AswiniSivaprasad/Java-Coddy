@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class CandlelitCountdownPrayer {
+
+	public static String eveningPrayerCountdown(int startNumber, int endNumber) {
+		for(int i=startNumber; i>=endNumber;i--) {
+			if(i%5 == 0) {
+				continue;
+			}
+			if(i%3 == 0) {
+				System.out.println("Peace");
+			} else {
+				System.out.println(i);
+			}
+		}
+		return "Amen";
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter starting number");
+		int startNumber = sc.nextInt();
+		System.out.println("Enter ending number");
+		int endNumber = sc.nextInt();
+		System.out.println(eveningPrayerCountdown(startNumber, endNumber));
+	}
+}
+
+Output : 
+Enter starting number
+30
+Enter ending number
+1
+
+29
+28
+Peace
+26
+Peace
+23
+22
+Peace
+19
+Peace
+17
+16
+14
+13
+Peace
+11
+Peace
+8
+7
+Peace
+4
+Peace
+2
+1
+Amen
